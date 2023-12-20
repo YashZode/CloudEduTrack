@@ -1,0 +1,177 @@
+<!-- <button type="button" (click)="goToBottom()" id="top">go to bottom </button> -->
+<div style="margin: 2rem">
+  <ng-container *ngIf="quiz_api_result">
+    <section style="margin-top:3rem">
+      <h1>Available Quiz</h1>
+      <div
+      class="container d-flex justify-content-between"
+      style="margin: 0 !important; padding: 0 !important"
+    >
+      <!-- card div -->
+      <div class="col-10 d-flex justify-content-start" style="gap:1rem">
+        
+        <!-- card -->
+        <mat-card class="example-card col-sm-6 col-lg-4" style="padding: 0;">
+          <div style="height:160px;text-align: center; background-image: url(https://t4.ftcdn.net/jpg/05/81/19/01/360_F_581190128_ATjhJSeuajxsduZrCFnrXHWV2v0cPaGQ.jpg);">
+              <!-- <img
+              mat-card-image
+              style="width: 150px"
+              src="https://t4.ftcdn.net/jpg/05/81/19/01/360_F_581190128_ATjhJSeuajxsduZrCFnrXHWV2v0cPaGQ.jpg"
+              alt="Angular Logo"
+            /> -->
+          </div>
+          
+          <mat-card-header style="margin-bottom: 1rem;">
+              <!-- <img
+                src="https://www.freakyjolly.com/wp-content/uploads/2021/07/cropped-cropped-fj-logo-192-removebg-preview-e1625997712615-1.png"
+                mat-card-avatar 
+              /> -->
+              <mat-card-title>Mathematics</mat-card-title>
+              <mat-card-subtitle>
+                This mathematics course is a comprehensive program that covers a wide range of mathematical topics
+              </mat-card-subtitle>
+            </mat-card-header>
+          <!-- <mat-card-content>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat.
+            </p>
+          </mat-card-content> -->
+  
+          <mat-card-actions style="position: absolute; bottom:0; left: 0.3rem;"  >
+            <!-- <button mat-raised-button color="accent">LIKE</button> -->
+            <ng-container *ngIf="math_attempted;">
+              <mat-card-title style="text-align: center; margin-right:0rem">Result {{math_result.score}}/10</mat-card-title>
+                <mat-card-subtitle style="margin-left:1rem">
+                  Tabs switched: {{math_result.numberOfTimesTabSwitched}}
+                </mat-card-subtitle>
+            </ng-container>
+            <ng-container *ngIf="math_attempted == false;">
+              <button   mat-raised-button color="primary" [routerLink]="['/student/quiz/math']" >Go to Quiz 1</button>
+             
+            </ng-container>
+            
+          </mat-card-actions>
+        </mat-card>
+        <!-- card-end -->
+        <!-- card -->
+        <mat-card class="example-card col-sm-6 col-lg-4" style="padding: 0;">
+          <div style="height:160px;text-align: center; background-image: url(https://t4.ftcdn.net/jpg/05/81/19/01/360_F_581190128_ATjhJSeuajxsduZrCFnrXHWV2v0cPaGQ.jpg);">
+              <!-- <img
+              mat-card-image
+              style="width: 150px"
+              src="https://t4.ftcdn.net/jpg/05/81/19/01/360_F_581190128_ATjhJSeuajxsduZrCFnrXHWV2v0cPaGQ.jpg"
+              alt="Angular Logo"
+            /> -->
+          </div>
+          
+          <mat-card-header style="margin-bottom: 1rem;">
+              <mat-card-title>General Knowledge</mat-card-title>
+              <mat-card-subtitle>
+                General Knowledg helps in developing intellectual abilities.
+              </mat-card-subtitle>
+            </mat-card-header>
+  
+            <mat-card-actions style="position: absolute; bottom:0; left: 0.3rem;"  >
+              <!-- <button mat-raised-button color="accent">LIKE</button> -->
+              <ng-container *ngIf="english_attempted;">
+                <mat-card-title style="text-align: center; margin-right:1rem">Result {{english_result.score}}/10</mat-card-title>
+                  <mat-card-subtitle style="margin-left:1rem">
+                    Tabs switched: {{english_result.numberOfTimesTabSwitched}}
+                  </mat-card-subtitle>
+              </ng-container>
+              <ng-container *ngIf="english_attempted == false;">
+                <button   mat-raised-button color="primary" [routerLink]="['/student/quiz/english']" >Go to Quiz 2</button>
+               
+              </ng-container>
+              
+            </mat-card-actions>
+        </mat-card>
+        <!-- card-end -->
+  <!-- card -->
+  <mat-card class="example-card col-sm-6 col-lg-4" style="padding: 0;">
+     
+        <div style="height:160px;text-align: center; background-image: url(https://t4.ftcdn.net/jpg/05/81/19/01/360_F_581190128_ATjhJSeuajxsduZrCFnrXHWV2v0cPaGQ.jpg);">
+          <!-- <img
+          mat-card-image
+          style="width: 150px"
+          src="https://t4.ftcdn.net/jpg/05/81/19/01/360_F_581190128_ATjhJSeuajxsduZrCFnrXHWV2v0cPaGQ.jpg"
+          alt="Angular Logo"
+        /> -->
+   
+      </div>
+      
+      <mat-card-header style="padding-bottom: 3rem;">
+          <!-- <img
+            src="https://www.freakyjolly.com/wp-content/uploads/2021/07/cropped-cropped-fj-logo-192-removebg-preview-e1625997712615-1.png"
+            mat-card-avatar 
+          /> -->
+          <mat-card-title>Cloud Computing</mat-card-title>
+          <mat-card-subtitle>
+            Cloud Computing is a branch of computer science that covers management, storage and processing of data on networks of the internet server. 
+          </mat-card-subtitle>
+        </mat-card-header>
+      <!-- <mat-card-content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </mat-card-content> -->
+  
+      <mat-card-actions  style="position: absolute; bottom:0; left: 0;" >
+        <!-- <button mat-raised-button color="accent">LIKE</button> -->
+        <button   mat-raised-button color="primary" disabled>Quiz Disabled</button>
+      </mat-card-actions>
+    </mat-card>
+    <!-- card-end -->
+        
+      </div>
+      <div class="col-2 ">
+  
+      </div>
+    </div>
+    </section>
+  </ng-container>
+<!-- MY COURSE -->
+  
+
+  <!-- <div id="focusBtn"></div>
+  <button type="button" (click)="goToBottom()">go to bottom </button> -->
+</div>
+
+<!-- 
+    <ng-container ngFor="question of questions">
+        {{questions[selected_question-1]}}
+        <form [formGroup]="answerForm">
+        <h3>Question: {{questions[selected_question-1][0]}}</h3>
+        <div class="form-check">
+        <input class="form-check-input" type="radio" formControlName="Answer {{selected_question}}" id="{{questions[selected_question-1][1]}}" value="{{questions[selected_question-1][1]}}">
+        <label class="form-check-label" for="{{questions[selected_question-1][1]}}">
+            {{questions[selected_question-1][1]}}
+        </label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="radio" formControlName="Answer {{selected_question}}" id="{{questions[selected_question-1][2]}}" value="{{questions[selected_question-1][2]}}">
+        <label class="form-check-label" for="{{questions[selected_question-1][2]}}">
+            {{questions[selected_question-1][2]}}
+        </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="Answer {{selected_question}}" id="{{questions[selected_question-1][3]}}" value="{{questions[selected_question-1][3]}}">
+            <label class="form-check-label" for="{{questions[selected_question-1][3]}}">
+            {{questions[selected_question-1][3]}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="Answer {{selected_question}}" id="{{questions[selected_question-1][4]}}" value="{{questions[selected_question-1][4]}}">
+            <label class="form-check-label" for="{{questions[selected_question-1][4]}}">
+            {{questions[selected_question-1][4]}}
+            </label>
+        </div>
+        </form>
+    </ng-container>
+     -->

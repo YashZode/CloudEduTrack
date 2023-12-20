@@ -1,0 +1,82 @@
+<div style="margin: 2rem;">
+    <h1>  Time Left: {{ timerDisplay }}</h1>
+    <ng-container *ngIf="questions">
+        <ng-container *ngFor="let question of questions; let i = index">
+            <form [formGroup]="answerForm">
+            <div [ngStyle]="{ 'display': selected_question  == i ? 'block' : 'none' }" class="Question_And_Answer_Container">
+                <h3>Total Number of Questions: {{questions.length - 1}}</h3>
+                        <h2>Q{{i}}) {{questions[i][0]}}</h2>
+                        <div class="form-check" (click)="selectOption('a')">
+                    <input class="form-check-input" type="radio" formControlName="Answer_{{selected_question}}" [id]="questions[i][1]" [value]="questions[i][1]" [checked]="selected_answers[i] == 'a'">
+                    <label class="form-check-label" [for]="questions[i][1]">
+                    A) {{questions[i][1]}}
+                    </label>
+                </div>
+                <div class="form-check" (click)="selectOption('b')">
+                    <input class="form-check-input" type="radio" formControlName="Answer_{{selected_question}}" [id]="questions[i][2]" [value]="questions[i][2]" [checked]="selected_answers[i] == 'b'">
+                    <label class="form-check-label" [for]="questions[i][2]">
+                    B) {{questions[i][2]}}
+                    </label>
+                </div>
+                <div class="form-check" (click)="selectOption('c')">
+                    <input class="form-check-input" type="radio" formControlName="Answer_{{selected_question}}" [id]="questions[i][3]" [value]="questions[i][3]" [checked]="selected_answers[i] == 'c'">
+                    <label class="form-check-label" [for]="questions[i][3]">
+                    C) {{questions[i][3]}}
+                    </label>
+                </div>
+                <div class="form-check" (click)="selectOption('d')">
+                    <input class="form-check-input" type="radio" formControlName="Answer_{{selected_question}}" [id]="questions[i][4]" [value]="questions[i][4]" [checked]="selected_answers[i] == 'd'">
+                    <label class="form-check-label" [for]="questions[i][4]">
+                    D) {{questions[i][4]}}
+                    </label>
+                </div>
+            </div>
+        </form>
+        
+        </ng-container>
+    </ng-container>
+    
+    <!-- <ng-container *ngFor="let question of new_questions; let i = index">
+        <form [formGroup]="answerForm">
+        <div [ngStyle]="{ 'display': selected_question  == i ? 'block' : 'none' }" class="Question_And_Answer_Container">
+            <h3>Total Number of Questions: {{new_questions.length}}</h3>
+        
+        <h2>Q{{i+1}}) {{new_questions[i]["questionText"]}}</h2>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="Answer {{selected_question}}" id='{{new_questions[i]["optionA"]}}' value='{{new_questions[i]["optionA"]}}' [checked]='selected_answers[i] == new_questions[i]["optionA"]'>
+                <label class="form-check-label" for="{{new_questions[i]['optionA']}}">
+                A) {{new_questions[i]["optionA"]}}
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="Answer {{selected_question}}" id='{{new_questions[i]["optionB"]}}' value='{{new_questions[i]["optionB"]}}' [checked]='selected_answers[i] == new_questions[i]["optionB"]'>
+                <label class="form-check-label" for="{{new_questions[i]['optionB']}}">
+                B) {{new_questions[i]["optionB"]}}
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="Answer {{selected_question}}" id='{{new_questions[i]["optionC"]}}' value='{{new_questions[i]["optionC"]}}' [checked]='selected_answers[i] == new_questions[i]["optionC"]'>
+                <label class="form-check-label" for="{{new_questions[i]['optionC']}}">
+                C) {{new_questions[i]["optionC"]}}
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="Answer {{selected_question}}" id='{{new_questions[i]["optionD"]}}' value='{{new_questions[i]["optionD"]}}' [checked]='selected_answers[i] == new_questions[i]["optionD"]'>
+                <label class="form-check-label" for="{{new_questions[i]['optionD']}}">
+                D) {{new_questions[i]["optionD"]}}
+                </label>
+            </div>
+            <h1>SELECTED OPTION: {{selected_answers[i]}}
+                THAT SHOULD BE EQUAL TO 
+            </h1>
+        </div>
+    </form>
+    
+    </ng-container> -->
+    <div style="margin-top:2rem;">
+        <button mat-raised-button class="btn btn-primary" color="primary" (click)="showPreviousQuestion()"  style="font-size: 20px !important">Previous Question</button>
+        <button mat-raised-button class="btn btn-primary" color="primary" (click)="showNextQuestion()" style="margin-left: 2rem; font-size: 20px !important">Next Question</button>
+        <button mat-raised-button color="accent" (click)="submitQuiz()" style="margin-left: 2rem; font-size: 20px !important">Submit Quiz</button>
+    </div>
+    
+</div>

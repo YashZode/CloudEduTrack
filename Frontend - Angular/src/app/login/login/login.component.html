@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<section class="login" style="height: 100% !important;">
+		<div class="login_box">
+			<div class="left">
+				<div class="contact">
+					<div >
+						<h3>LogIn</h3>
+						<form [formGroup]="loginForm" (ngSubmit)="login()">
+							<input type="text" formControlName="userid" placeholder="USERNAME">
+							<input type="password" formControlName="password" placeholder="PASSWORD">
+							<button class="submit" type="submit"  >Log In</button>
+						</form>
+						
+                    </div>
+				</div>
+			</div>
+			<div class="right">
+				<div class="right-text">
+					<h2>CloudEduTrack</h2>
+					<h5>Voice Enabled Exam Management System</h5>
+				</div>
+				</div>
+		</div>
+	</section>
